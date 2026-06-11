@@ -26,6 +26,9 @@ public class InfoSceneManager : MonoBehaviour
 
     void Start()
 {
+    if (Input.GetMouseButtonDown(0))
+    Debug.Log("KLIK REGISTRERET");
+    
     if (infoCardGroup != null)
     {
         infoCardGroup.alpha = 0f;
@@ -33,8 +36,11 @@ public class InfoSceneManager : MonoBehaviour
         infoCardGroup.interactable = false;
     }
 
-    if (fadeGroup != null)
-        fadeGroup.alpha = 0f;
+    if (fadeGroup != null) {
+    fadeGroup.alpha = 0f;
+    fadeGroup.blocksRaycasts = false; // tilføj denne
+    fadeGroup.interactable = false;   // og denne
+}
 
     StartCoroutine(RunSequence());
 }

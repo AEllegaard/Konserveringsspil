@@ -36,9 +36,14 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         if (intactBar != null)
-            intactBar.fillAmount = cleaner.IntactProgress;
+        {
+            float intact = cleaner.IntactProgress;
+            intactBar.fillAmount = intact;
             if (PercentTextInt != null)
-    PercentTextInt.text = Mathf.RoundToInt(cleaner.IntactProgress * 100f) + "%";
+                PercentTextInt.text = Mathf.RoundToInt(intact * 100f) + "%";
+
+            PlayerPrefs.SetFloat("IntactProgress", intact);
+        }
 
         if (conservationBar != null)
         {
@@ -47,6 +52,8 @@ public class UIManager : MonoBehaviour
 
             if (percentTextCons != null)
                 percentTextCons.text = Mathf.RoundToInt(progress * 100f) + "%";
+
+            PlayerPrefs.SetFloat("ConservationProgress", Mathf.Clamp01(progress));
 
             if (progress >= 1f && !endTriggered)
             {
@@ -83,7 +90,7 @@ public class UIManager : MonoBehaviour
         float sprayed      = wetPainter.SprayProgress * 2f;
         float desalted     = waterTank.isComplete ? 0.5f : 0f;
 
-        return (chopProgress + conserved + sprayed + desalted) / 3.5f;
+        return Mathf.Clamp01((chopProgress + conserved + sprayed + desalted) / 3.5f);
     }
 
     public void ClickRotate()

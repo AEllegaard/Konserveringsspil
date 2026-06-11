@@ -15110,7 +15110,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a0646cf81dcc6147b6ffddbd0dfb8ca, type: 2}
+  - {fileID: 2100000, guid: 66490619e7e261e4d80332177545c4a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15168,6 +15168,7 @@ GameObject:
   - component: {fileID: 1680559647}
   - component: {fileID: 1680559646}
   - component: {fileID: 1680559648}
+  - component: {fileID: 1680559649}
   m_Layer: 6
   m_Name: Vildsvinos
   m_TagString: Untagged
@@ -15230,6 +15231,20 @@ MonoBehaviour:
   button: {fileID: 2139148294}
   activeColor: {r: 0, g: 0.13004482, b: 1, a: 1}
   inactiveColor: {r: 0.40784317, g: 0.45882356, b: 0.77647066, a: 1}
+--- !u!114 &1680559649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680559644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99e7efd997d8e4dacaa6d5285f0e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PersistVildsvin
+  rotationSpeed: 30
+  bronzeMaterial: {fileID: 2100000, guid: a39bac82eb054ad43bd72bd03ee2752f, type: 2}
 --- !u!1 &1682222924 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f63b448009d5e804db886d0d90980984, type: 3}
@@ -20907,7 +20922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1888043401
 Transform:
   m_ObjectHideFlags: 0
