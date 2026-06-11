@@ -8,6 +8,7 @@ public class PersistVildsvin : MonoBehaviour
     void Awake()
 {
     transform.SetParent(null);
+    transform.rotation = Quaternion.identity;
     DontDestroyOnLoad(gameObject);
     SceneManager.sceneLoaded += OnSceneLoaded;
 }
@@ -17,27 +18,32 @@ public Material bronzeMaterial;
     if (scene.name == "EndScene")
     {
         transform.position = new Vector3(-75.011f, 0, 175.8f);
-        transform.rotation = Quaternion.Euler(18.422f, 0, 0);
+        transform.eulerAngles = new Vector3(0f, 0, 0);
+        Transform vildsvinRoot = transform.Find("VildsvinRoot");
+if (vildsvinRoot != null)
+{
+    vildsvinRoot.localRotation = Quaternion.identity;
+}
+        Debug.Log("Rotation sat til: " + transform.rotation.eulerAngles);
         transform.localScale = new Vector3(20.9f, 5.712463f, 5.712463f);
 
         // Skift materiale på alle celler
-        Material bronzeMat = Resources.Load<Material>("Bronze 1");
         Transform vildsvin1 = transform.Find("VildsvinRoot/Vildsvin.1");
         if (vildsvin1 != null)
         {
             foreach (Transform celle in vildsvin1)
             {
                 Renderer r = celle.GetComponent<Renderer>();
-                if (r != null) r.material = bronzeMat;
+                if (r != null) r.material = bronzeMaterial;
             }
         }
 
-        EndRotator rotator = gameObject.GetComponent<EndRotator>();
-        if (rotator == null)
-        {
-            rotator = gameObject.AddComponent<EndRotator>();
-            rotator.rotationSpeed = rotationSpeed;
-        }
+        // Destroy eksisterende rotator og lav ny så den starter fra nul
+        EndRotator existingRotator = gameObject.GetComponent<EndRotator>();
+        if (existingRotator != null) Destroy(existingRotator);
+        
+        EndRotator rotator = gameObject.AddComponent<EndRotator>();
+        rotator.rotationSpeed = rotationSpeed;
     }
 }
 

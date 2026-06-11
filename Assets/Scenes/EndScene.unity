@@ -223,7 +223,7 @@ Light:
   serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -986,12 +986,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vildsvinets knogler har ligget i Midtjyllands jord siden 3.-2. \xE5rhundrede
-    f.Kr. Over 2000 \xE5r i m\xF8rket, mens kelternes verden opstod og forsvandt
-    omkring dem.\n\nNu har de overlevet dine h\xE6nder.\n\nTakket v\xE6re din konservering
+  m_text: "Vildsvinet har ligget i Midtjyllands jord siden 3.-2. \xE5rhundrede f.Kr.
+    Over 2000 \xE5r i m\xF8rket, mens kelternes verden opstod og forsvandt omkring
+    dem.\n\nNu har den overlevet dine h\xE6nder.\n\nTakket v\xE6re din konservering
     er fundet renset, stabiliseret og klar til at m\xF8de verden igen. Snart vil
-    det tage sin plads i udstillingen Kelternes Verden p\xE5 Moesgaard Museum, hvor
-    nye \xF8jne kan se det du har bevaret."
+    det tage sin plads i udstillingen Kelternes Verden, hvor nye \xF8jne kan se det
+    du har bevaret."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8b6c9967a031614c8db3df5b9e8fa5c, type: 2}
   m_sharedMaterial: {fileID: 1363155858474047575, guid: f8b6c9967a031614c8db3df5b9e8fa5c, type: 2}
